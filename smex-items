@@ -1,0 +1,19 @@
+
+;; ----- smex-history -----
+(
+ package-delete
+ company-mode
+ company-css
+ package-install
+ cd
+ 5x5
+ arp
+)
+
+;; ----- smex-data -----
+(
+ (package-install . 1)
+ (company-css . 2)
+ (company-mode . 1)
+ (package-delete . 1)
+)
