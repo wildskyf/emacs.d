@@ -1,0 +1,7 @@
+* Reference
+
+幾個覺得不錯的文件，可以參考。
+
+- [[https://github.com/redguardtoo/mastering-emacs-in-one-year-guide/blob/master/guide-zh.org][一年成為Emacs高手(像神一樣使用編輯器)]]
+
+- [[https://github.com/emacs-tw/emacs-101][emacs-101]]
