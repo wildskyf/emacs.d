@@ -22,10 +22,21 @@
 ; some minor setting
 ;;;;;;;;;;;;;;;;;;;;;;;
 
+(setq linum-format "%4d \u2502 ")
+
+(global-linum-mode t)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
 
+
+;;;;;;;;;;;;;;;;;;;;
+; evil
+;;;;;;;;;;;;;;;;;;;;;;;
+
+(evil-mode 1) ;啟動emacs載入evil，同時默認進入Vim模式 
+;要在Vim裡面使用emacs的功能！OK，使用\作為leader就OK了 
+;我還要在emacs和vim模式裡面切換：Cz 
 
 
 ;;;;;;;;;;;;;;;;;;;;;
@@ -76,17 +87,6 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 
-
-
-
-
-
-
-
-
-
-
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -94,7 +94,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (fiplr editorconfig powerline smex web-mode colour-region column-enforce-mode column-marker rainbow-mode org))))
+    (evil fiplr editorconfig powerline smex web-mode colour-region column-enforce-mode column-marker rainbow-mode org))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

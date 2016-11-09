@@ -12,7 +12,7 @@
 
 ;; ----- smex-data -----
 (
- (package-install . 6)
+ (package-install . 7)
  (company-css . 2)
  (company-mode . 1)
  (package-delete . 1)
