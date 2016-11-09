@@ -4,7 +4,7 @@
 (setq package-archives '(
 			 ("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")
+                         ;("melpa" . "http://melpa.org/packages/")
 			 ("melpa-stable" . "http://stable.melpa.org/packages/")))
 (package-initialize)
 
@@ -27,6 +27,21 @@
 
 
 
+
+;;;;;;;;;;;;;;;;;;;;;
+; powerline
+;;;;;;;;;;;;;;;;;;;;;;
+
+(powerline-center-theme)
+
+
+;;;;;;;;;;;;;;;;;;;;
+; fiplr
+;;;;;;;;;;;;;;;;;;;;;;
+(setq fiplr-root-markers '(".git" ".svn"))
+(setq fiplr-ignored-globs '((directories (".git" ".svn"))
+                            (files ("*.jpg" "*.png" "*.zip" "*~"))))
+(global-set-key (kbd "C-x p") 'fiplr-find-file)
 
 
 
@@ -79,7 +94,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (smex web-mode colour-region column-enforce-mode column-marker rainbow-mode org))))
+    (fiplr editorconfig powerline smex web-mode colour-region column-enforce-mode column-marker rainbow-mode org))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

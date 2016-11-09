@@ -1,10 +1,10 @@
 
 ;; ----- smex-history -----
 (
- package-delete
- company-mode
- company-css
  package-install
+ find-lisp-find-dired-filter
+ package-refresh-contents
+ package-delete
  cd
  5x5
  arp
@@ -12,8 +12,10 @@
 
 ;; ----- smex-data -----
 (
- (package-install . 1)
+ (package-install . 6)
  (company-css . 2)
  (company-mode . 1)
  (package-delete . 1)
+ (package-refresh-contents . 1)
+ (find-lisp-find-dired-filter . 1)
 )
