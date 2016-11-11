@@ -1,0 +1,7 @@
+;;; -*- coding: utf-8 -*-
+(("/Users/wildsky/.emacs.d/init.el" . 529)
+ ("/Users/wildsky/.emacs.d/elpa/monokai-theme-20160902.1417/monokai-theme.el" . 2269)
+ ("/Users/wildsky/.zshrc" . 3093)
+ ("/Users/wildsky/.vim/bundle/wellsokai.vim/colors/wellsokai.vim" . 887)
+ ("/Users/wildsky/Documents/womany/womany_alpha/"
+  (dired-filename . "/Users/wildsky/Documents/womany/womany_alpha/.gitignore")))
