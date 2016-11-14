@@ -121,13 +121,9 @@
 ; switch between emacs & vim: Cz
 
 
-;;;;;;;;;;;;;;;;;;;;
-; fiplr
-;;;;;;;;;;;;;;;;;;;;;;
-(setq fiplr-root-markers '(".git" ".svn"))
-(setq fiplr-ignored-globs '((directories (".git" ".svn"))
-                            (files ("*.jpg" "*.png" "*.zip" "*~"))))
-(global-set-key (kbd "C-x p") 'fiplr-find-file)
+(projectile-global-mode)
+(setq projectile-enable-caching t)
+(global-set-key (kbd "C-x p") 'projectile-find-file)
 
 
 

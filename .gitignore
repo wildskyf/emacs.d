@@ -6,3 +6,5 @@
 .cask
 places
 smex-items
+*.cache
+projectile-bookmarks.eld
