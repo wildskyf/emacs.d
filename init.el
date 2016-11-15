@@ -101,6 +101,11 @@
 
 
 
+;;;;;;;;;;;;;;;;;;;
+; editorconfig
+;;;;;;;;;;;;;;;;;;;;;;
+
+(editorconfig-mode 1)
 
 ;;;;;;;;;;;;;;;;;;;
 ; rainbow-mode
