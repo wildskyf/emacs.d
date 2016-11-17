@@ -22,27 +22,33 @@
 
 
 
+
 ;;;;;;;;;;;;;;;;;;;;;
 ; some minor setting
 ;;;;;;;;;;;;;;;;;;;;;;;
 
+(save-place-mode)
+
+(global-font-lock-mode t)
+(fset 'yes-or-no-p 'y-or-n-p)
+
 (setq inhibit-startup-message t)
-(setq mode-require-final-newline nil)
 (setq ring-bell-function 'ignore)
 (setq delete-by-moving-to-trash t)
-(save-place-mode)
-(global-font-lock-mode t)
+(setq mode-require-final-newline nil)
 
-; use y,n to mean yes, no
-(fset 'yes-or-no-p 'y-or-n-p)
+(load "~/.emacs.d/my/rmScratch.el")
+
+(global-unset-key (kbd "C-z"))
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
+; display time
+(setq display-time-24hr-format t)
+(display-time)
 
 ; highlight search result
 (setq lazy-highlight-cleanup nil)
 (setq lazy-highlight-initial-delay 0)
-
-; display time
-(display-time-mode t)
-(setq display-time-24hr-format t)
 
 ; line num
 (global-linum-mode t)
@@ -72,50 +78,9 @@
 
 
 
-;;; Key binding
-
-; disable ctrl-z
-(global-unset-key (kbd "C-z"))
-
-; ibuffer
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-
-
-; Makes *scratch* empty.
-(setq initial-scratch-message "")
-
-;; Removes *scratch* from buffer after the mode has been set.
-(defun remove-scratch-buffer ()
-  (if (get-buffer "*scratch*")
-      (kill-buffer "*scratch*")))
-(add-hook 'after-change-major-mode-hook 'remove-scratch-buffer)
-
-;; Removes *messages* from the buffer.
-(setq-default message-log-max nil)
-(kill-buffer "*Messages*")
-
-;; Removes *Completions* from buffer after you've opened a file.
-(add-hook 'minibuffer-exit-hook
-      '(lambda ()
-         (let ((buffer "*Completions*"))
-           (and (get-buffer buffer)
-                (kill-buffer buffer)))))
-
-;; Don't show *Buffer list* when opening multiple files at the same time.
-(setq inhibit-startup-buffer-menu t)
-
-;; Show only one active window when opening multiple files at the same time.
-(add-hook 'window-setup-hook 'delete-other-windows)
-
-
-
-
-
-
-
-
-
-;;; observed
+;;;;;;;;;;;;;;;;;;
+; observed setting
+;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; ido-mode
 (ido-mode t)
@@ -123,95 +88,62 @@
 
 
 
-;;;;;;;;;;;;;;;;;;;
-; autopair
-;;;;;;;;;;;;;;;;;;;;;;
 
 
-(autopair-global-mode)
 
-;;;;;;;;;;;;;;;;;;;
-; smooth-scrolling
-;;;;;;;;;;;;;;;;;;;;;;
 
-(smooth-scrolling-mode 1)
-(setq smooth-scroll-margin 3)
-
-;;;;;;;;;;;;;;;;;;;
-; emmet-mode
-;;;;;;;;;;;;;;;;;;;;;;
-
-(add-hook 'sgml-mode-hook 'emmet-mode)
-(add-hook 'css-mode-hook  'emmet-mode)
 
 
 ;;;;;;;;;;;;;;;;;;;
-; js2-mode
+; plugin
 ;;;;;;;;;;;;;;;;;;;;;;
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-
-;;;;;;;;;;;;;;;;;;;
-; editorconfig
-;;;;;;;;;;;;;;;;;;;;;;
-
-(editorconfig-mode 1)
-
-;;;;;;;;;;;;;;;;;;;
-; rainbow-mode
-;;;;;;;;;;;;;;;;;;;;;;
-
-(define-globalized-minor-mode global-rainbow-mode rainbow-mode
-  (lambda () (rainbow-mode t)))
-
-(global-rainbow-mode t)
-
-;;;;;;;;;;;;;;;;;;;;
 ; evil
-;;;;;;;;;;;;;;;;;;;;;;;
-
 (evil-mode t)
 ; go in vim mode at startup
 ; use \ as leader key for emacs function
 ; switch between emacs & vim: Cz
 
-;;;;;;;;;;;;
-; projectile
-;;;;;;;;;;;;;;;
 
+
+; autopair
+(autopair-global-mode)
+
+; smooth-scrolling
+(smooth-scrolling-mode 1)
+(setq smooth-scroll-margin 3)
+
+; emmet-mode
+(add-hook 'sgml-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook  'emmet-mode)
+
+; js2-mode
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
+; editorconfig
+(editorconfig-mode 1)
+
+; rainbow-mode
+(define-globalized-minor-mode global-rainbow-mode rainbow-mode
+  (lambda () (rainbow-mode t)))
+(global-rainbow-mode t)
+
+; projectile
 (projectile-global-mode)
 (setq projectile-enable-caching t)
 (global-set-key (kbd "C-x p") 'projectile-find-file)
 
-
-;;;;;;;;;;;;
 ; web-mode
-;;;;;;;;;;;;;;;
+(load-file "~/.emacs.d/my/web-mode.el")
 
-(add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(defun my-web-mode-hook ()
-   (setq web-mode-markup-indent-offset 2)
-   (setq web-mode-css-indent-offset 2)
-   (setq web-mode-code-indent-offset 2))
-(add-hook 'web-mode-hook  'my-web-mode-hook)
-
-
-
-;;;;;;;;;;
 ; smex
-;;;;;;;;;;;;
-
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
+
+;;;;;;;;;;
+; custom
+;;;;;;;;;;;;;;;;;
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
