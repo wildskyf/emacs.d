@@ -25,7 +25,7 @@
  '(magit-diff-use-overlays nil)
    '(package-selected-packages
        (quote
-          (pangu-spacing rainbow-delimiters autopair smooth-scrolling sublime emmet-mode js2-mode projectile powerline-evil linum-relative web-mode smex rainbow-mode powerline org monokai-theme evil editorconfig column-marker column-enforce-mode colour-region)))
+          (rust-mode pangu-spacing rainbow-delimiters autopair smooth-scrolling sublime emmet-mode js2-mode projectile powerline-evil linum-relative web-mode smex rainbow-mode powerline org monokai-theme evil editorconfig column-marker column-enforce-mode colour-region)))
  '(pos-tip-background-color "#A6E22E")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)
