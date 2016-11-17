@@ -40,7 +40,6 @@
 (load "~/.emacs.d/my/rmScratch.el")
 
 (global-unset-key (kbd "C-z"))
-(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ; display time
 (setq display-time-24hr-format t)
@@ -98,11 +97,9 @@
 ; plugin
 ;;;;;;;;;;;;;;;;;;;;;;
 
+
 ; evil
-(evil-mode t)
-; go in vim mode at startup
-; use \ as leader key for emacs function
-; switch between emacs & vim: Cz
+(load-file "~/.emacs.d/my/evil.el")
 
 (global-pangu-spacing-mode 1)
 (setq pangu-spacing-real-insert-separtor t)
@@ -134,7 +131,6 @@
 ; projectile
 (projectile-global-mode)
 (setq projectile-enable-caching t)
-(global-set-key (kbd "C-x p") 'projectile-find-file)
 
 ; web-mode
 (load-file "~/.emacs.d/my/web-mode.el")
