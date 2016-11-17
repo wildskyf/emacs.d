@@ -94,6 +94,25 @@
 (setq ido-enable-flex-matching t)
 
 
+
+
+
+
+
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;
+; emmet-mode
+;;;;;;;;;;;;;;;;;;;;;;
+
+(add-hook 'sgml-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook  'emmet-mode)
+
+
 ;;;;;;;;;;;;;;;;;;;
 ; js2-mode
 ;;;;;;;;;;;;;;;;;;;;;;
@@ -135,6 +154,7 @@
 ; web-mode
 ;;;;;;;;;;;;;;;
 
+(add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
