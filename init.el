@@ -104,7 +104,12 @@
 ; use \ as leader key for emacs function
 ; switch between emacs & vim: Cz
 
+(require 'pangu-spacing)
+(global-pangu-spacing-mode 1)
+(setq pangu-spacing-real-insert-separtor t)
 
+; rainbow-delimiters
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ; autopair
 (autopair-global-mode)
