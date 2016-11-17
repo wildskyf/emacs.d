@@ -6,6 +6,13 @@
 (global-evil-leader-mode)
 (global-evil-matchit-mode 1)
 
+(eval-after-load "evil"
+  '(progn
+     (define-key evil-normal-state-map (kbd "C-w h") 'evil-window-left)
+     (define-key evil-normal-state-map (kbd "C-w j") 'evil-window-down)
+     (define-key evil-normal-state-map (kbd "C-w k") 'evil-window-up)
+     (define-key evil-normal-state-map (kbd "C-w l") 'evil-window-right)))
+
 (evil-leader/set-key
    "w" 'save-buffer
    "W" 'save-some-buffers
