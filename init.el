@@ -17,7 +17,7 @@
 
 (load-theme 'monokai t)
 (powerline-evil-center-color-theme)
-
+(setq powerline-evil-tag-style 'verbose)
 
 
 
@@ -104,7 +104,6 @@
 ; use \ as leader key for emacs function
 ; switch between emacs & vim: Cz
 
-(require 'pangu-spacing)
 (global-pangu-spacing-mode 1)
 (setq pangu-spacing-real-insert-separtor t)
 
@@ -119,8 +118,7 @@
 (setq smooth-scroll-margin 3)
 
 ; emmet-mode
-(add-hook 'sgml-mode-hook 'emmet-mode)
-(add-hook 'css-mode-hook  'emmet-mode)
+(add-hook 'web-mode-hook 'emmet-mode)
 
 ; js2-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
