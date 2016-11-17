@@ -19,6 +19,9 @@
 (powerline-evil-center-color-theme)
 
 
+
+
+
 ;;;;;;;;;;;;;;;;;;;;;
 ; some minor setting
 ;;;;;;;;;;;;;;;;;;;;;;;
@@ -102,8 +105,12 @@
 
 
 
+;;;;;;;;;;;;;;;;;;;
+; smooth-scrolling
+;;;;;;;;;;;;;;;;;;;;;;
 
-
+(smooth-scrolling-mode 1)
+(setq smooth-scroll-margin 3)
 
 ;;;;;;;;;;;;;;;;;;;
 ; emmet-mode
