@@ -8,13 +8,15 @@
 (global-evil-leader-mode)
 (global-evil-matchit-mode 1)
 
-(define-key evil-motion-state-map "\C-w" nil)
-(define-key evil-insert-state-map "\C-w" nil)
-(define-key evil-emacs-state-map  "\C-w" nil)
+(eval-after-load "evil-maps"
+  (dolist (map '(evil-motion-state-map
+                 evil-emacs-state-map))
+    (define-key (eval map) "\C-w" nil)))
 
 (evil-leader/set-key
    "w" 'save-buffer
    "W" 'save-some-buffers
+   "x" 'save-buffers-kill-emacs
    "e" 'find-file
    "b" 'switch-to-buffer
    "B" 'ibuffer
