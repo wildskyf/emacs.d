@@ -4,9 +4,10 @@
 ; switch between emacs & vim: Cz
 (evil-mode t)
 
-; (global-evil-tabs-mode t)
 (global-evil-leader-mode)
 (global-evil-matchit-mode 1)
+
+(load-file "~/.emacs.d/my/evil-tabs.el")
 
 (eval-after-load "evil-maps"
   (dolist (map '(evil-motion-state-map
